@@ -1,0 +1,2 @@
+module ExameMedicosHelper
+end

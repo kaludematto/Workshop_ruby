@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Laboratorios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Endereco</th>
+      <th>Status</th>
+       <th>ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @laboratorios.each do |laboratorio| %>
+      <tr>
+        <td><%= laboratorio.nome %></td>
+        <td><%= laboratorio.endereco %></td>
+         <td><%= humanize_boolean(laboratorio.status) %></td>
+        <td><%= laboratorio.id %></td>
+        <td><%= link_to 'Show', laboratorio %></td>
+        <td><%= link_to 'Edit', edit_laboratorio_path(laboratorio) %></td>
+        <td><%= link_to 'Destroy', laboratorio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3><%= link_to 'Novo Laboratório', new_laboratorio_path %></h3>
+<h3><%= link_to 'Página Inicial', welcome_index_path  %></h3>

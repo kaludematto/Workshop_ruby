@@ -1,0 +1,33 @@
+<%= form_with(model: laboratorio) do |form| %>
+  <% if laboratorio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(laboratorio.errors.count, "error") %> prohibited this laboratorio from being saved:</h2>
+
+      <ul>
+        <% laboratorio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :endereco %>
+    <%= form.text_field :endereco %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.check_box :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+

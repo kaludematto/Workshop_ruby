@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<header>
+<h1>Exame Medicos</h1>
+</header>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Status</th>
+      <th>Laboratorio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exame_medicos.each do |exame_medico| %>
+      <tr>
+        <td><%= exame_medico.nome %></td>
+        <td><%= exame_medico.tipo %></td>
+        <td><%= humanize_boolean(exame_medico.status) %></td>
+        <td><%= exame_medico.laboratorio.nome%></td>
+        <td><%= link_to 'Show', exame_medico %></td>
+        <td><%= link_to 'Edit', edit_exame_medico_path(exame_medico) %></td>
+        <td><%= link_to 'Destroy', exame_medico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3><%= link_to 'Novo Exame Medico', new_exame_medico_path %></h3>
+<h3><%= link_to 'Página Inicial', welcome_index_path  %></h3>
