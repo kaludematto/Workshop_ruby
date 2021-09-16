@@ -64,6 +64,6 @@ class LaboratoriosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def laboratorio_params
-      params.require(:laboratorio).permit(:nome, :endereco, :status,)
+      params.require(:laboratorio).permit(:nome, :endereco, :status)
     end
 end

@@ -23,8 +23,9 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.check_box :status %>
+    <%= form.select :status, [['Ativo', true], ['Inativo', false]] %>
   </div>
+  
 
   <div class="actions">
     <%= form.submit %>

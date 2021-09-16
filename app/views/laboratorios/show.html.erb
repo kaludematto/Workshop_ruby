@@ -12,8 +12,8 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @laboratorio.status %>
+  <%= humanize_boolean(@laboratorio.status) %>
 </p>
 
-<%= link_to 'Edit', edit_laboratorio_path(@laboratorio) %> |
-<%= link_to 'Back', laboratorios_path %>
+<%= link_to 'Editar', edit_laboratorio_path(@laboratorio) %> |
+<%= link_to 'Voltar', laboratorios_path %>

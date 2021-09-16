@@ -8,7 +8,7 @@
       <th>Nome</th>
       <th>Tipo</th>
       <th>Status</th>
-      <th>Laboratorio</th>
+      <th>Laboratório</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= exame_medico.tipo %></td>
         <td><%= humanize_boolean(exame_medico.status) %></td>
         <td><%= exame_medico.laboratorio.nome%></td>
-        <td><%= link_to 'Show', exame_medico %></td>
-        <td><%= link_to 'Edit', edit_exame_medico_path(exame_medico) %></td>
-        <td><%= link_to 'Destroy', exame_medico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', exame_medico %></td>
+        <td><%= link_to 'Editar', edit_exame_medico_path(exame_medico) %></td>
+        <td><%= link_to 'Deletar', exame_medico, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -5,10 +5,3 @@
 <h3 align="center"><%= link_to 'Laboratórios', laboratorios_path %></h3>
 <h3 align="center"><%= link_to 'Exames', exame_medicos_path  %></h3>
 
-<div align="center">
-<%= form_with url: "/exame_medicos", method: :get do |form| %>
-  <%= form.label :query, "Search for:" %>
-  <%= form.text_field :query %>
-  <%= form.submit "Search" %>
-<% end %>
-</div>

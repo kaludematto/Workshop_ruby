@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :laboratorio_id %>
-    <%= form.text_field :laboratorio_id %>
+    <%= form.select("laboratorio_id", @laboratorio_options, { include_blank: 'Selecione...' }, class:"form-control") %>
   </div>
 
   <div class="actions">

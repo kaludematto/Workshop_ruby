@@ -1,6 +1,6 @@
 class ExameMedicosController < ApplicationController
   before_action :set_exame_medico, only: %i[ show edit update destroy ]
-
+  before_action :set_laboratorio_options, only: [:new, :create, :edit, :update]
   # GET /exame_medicos or /exame_medicos.json
   def index
     @exame_medicos = ExameMedico.all
@@ -57,7 +57,9 @@ class ExameMedicosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    def set_laboratorio_options
+        @laboratorio_options = Laboratorio.all.pluck(:nome, :id)
+    end
     
     def set_exame_medico
       @exame_medico = ExameMedico.find(params[:id])
@@ -65,6 +67,6 @@ class ExameMedicosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exame_medico_params
-      params.require(:exame_medico).permit(:nome, :tipo, :status, :laboratorio_id, :laboratorio_name)
+      params.require(:exame_medico).permit(:nome, :tipo, :status ,:laboratorio_id )
     end
 end

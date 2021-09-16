@@ -12,13 +12,13 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @exame_medico.status %>
+  <%= humanize_boolean(@exame_medico.status) %>
 </p>
 
 <p>
   <strong>Laboratorio:</strong>
-  <%= @exame_medico.laboratorio_id %>
+  <%= @exame_medico.laboratorio.nome %>
 </p>
 
-<%= link_to 'Edit', edit_exame_medico_path(@exame_medico) %> |
-<%= link_to 'Back', exame_medicos_path %>
+<%= link_to 'Editar', edit_exame_medico_path(@exame_medico) %> |
+<%= link_to 'Voltar', exame_medicos_path %>
