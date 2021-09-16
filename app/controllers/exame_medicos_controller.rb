@@ -25,7 +25,7 @@ class ExameMedicosController < ApplicationController
 
     respond_to do |format|
       if @exame_medico.save
-        format.html { redirect_to @exame_medico, notice: "Exame medico was successfully created." }
+        format.html { redirect_to @exame_medico, notice: "Exame médico criado com sucesso!" }
         format.json { render :show, status: :created, location: @exame_medico }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ExameMedicosController < ApplicationController
   def update
     respond_to do |format|
       if @exame_medico.update(exame_medico_params)
-        format.html { redirect_to @exame_medico, notice: "Exame medico was successfully updated." }
+        format.html { redirect_to @exame_medico, notice: "Exame médico foi atualizado com sucesso!." }
         format.json { render :show, status: :ok, location: @exame_medico }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class ExameMedicosController < ApplicationController
   def destroy
     @exame_medico.destroy
     respond_to do |format|
-      format.html { redirect_to exame_medicos_url, notice: "Exame medico was successfully destroyed." }
+      format.html { redirect_to exame_medicos_url, notice: "Exame médico foi deletado com sucesso!." }
       format.json { head :no_content }
     end
   end
@@ -67,6 +67,6 @@ class ExameMedicosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exame_medico_params
-      params.require(:exame_medico).permit(:nome, :tipo, :status ,:laboratorio_id )
+      params.require(:exame_medico).permit(:nome, :tipo, :status, :laboratorio_id)
     end
 end

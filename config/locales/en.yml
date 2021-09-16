@@ -33,6 +33,6 @@ en:
   helpers:
     submit:
       create: "Completar Criação "
-      update: "Completar Edição"
+      update: "Aplicar Atualizações"
 
   
